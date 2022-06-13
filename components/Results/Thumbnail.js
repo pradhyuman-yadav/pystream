@@ -7,14 +7,11 @@ const Thumbnail = forwardRef( ( {result}, ref ) => {
 
   return (
     <div ref={ref} className="p-2 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">
-        <Image
-            layout="responsive"
+        <Image layout="responsive"
             src={
-                `${IMG_URL}${result.backdrop_path || result.poster_path}` ||
-                `${IMG_URL}${result.poster_path}`
-            } 
-            height={1000}
-            width={1920}
+                `${IMG_URL}${result.poster_path || result.backdrop_path}` ||
+                `${IMG_URL}${result.backdrop_path}`
+            } height={1920} width={1280}
         />
         <div className="p-2">
             <p className="truncate max-w-md">{result.overview}</p>
